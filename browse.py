@@ -225,3 +225,6 @@ async def repost_ad(cb: CallbackQuery, bot: Bot):
 @router.callback_query(F.data == "noop")
 async def noop(cb: CallbackQuery):
     await cb.answer()
+-e 
+# router alias for main.py import
+browse_router = router
