@@ -22,11 +22,10 @@ async def main():
     await init_db()
 from aiogram.client.default import DefaultBotProperties
 bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-    # Register routers (order matters — more specific first)
-    dp.include_router(admin_router)
-    dp.include_router(create_router)
-    dp.include_router(browse_router)
-    dp.include_router(start_router)
+
+dp.include_router(admin_router)
+dp.include_router(browse_router)
+dp.include_router(create_router)
 
     log.info("Starting GiftTrader Pro bot …")
     await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
