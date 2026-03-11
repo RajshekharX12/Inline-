@@ -333,6 +333,6 @@ def _cancel_kb():
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="❌ Cancel", callback_data="cancel:menu")]
     ])
--e 
+    
 # router alias for main.py import
 create_router = router
