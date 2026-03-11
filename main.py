@@ -3,7 +3,9 @@ import logging
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
-
+from admin import admin_router
+from browse import browse_router
+from create_ad import create_router
 from config import BOT_TOKEN
 from database import init_db
 from handlers import start_router, create_router, browse_router, admin_router
