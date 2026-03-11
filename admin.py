@@ -162,6 +162,6 @@ async def admin_do_broadcast(msg: Message, state: FSMContext, bot: Bot):
     except Exception as e:
         await msg.answer(f"❌ Error: {e}")
     await state.clear()
--e 
+    
 # router alias for main.py import
 admin_router = router
