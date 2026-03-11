@@ -20,10 +20,8 @@ log = logging.getLogger(__name__)
 async def main():
     log.info("Initialising database …")
     await init_db()
-
-    bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
-    dp  = Dispatcher(storage=MemoryStorage())
-
+from aiogram.client.default import DefaultBotProperties
+bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     # Register routers (order matters — more specific first)
     dp.include_router(admin_router)
     dp.include_router(create_router)
